@@ -1,10 +1,13 @@
+import { Readability } from '@mozilla/readability';
+
 let readerActive = false;
 let originalContent = null;
 
 function extractReadableContent() {
-  const article = new DOMParser().parseFromString(document.documentElement.outerHTML, "text/html");
-  const readable = article.querySelector("article") || article.querySelector("main") || article.body;
-  return readable ? readable.innerHTML : null;
+  const clone = document.cloneNode(true);
+  const reader = new Readability(clone);
+  const article = reader.parse();
+  return article ? article.content : null;
 }
 
 function activateReader() {
@@ -32,12 +35,18 @@ function deactivateReader() {
   originalContent = null;
 }
 
-// Listen for messages from popup/background
+// Listen for messages from background
 chrome.runtime.onMessage.addListener((request) => {
   if (request.action === "activateReader") {
     activateReader();
   } else if (request.action === "deactivateReader") {
     deactivateReader();
+  } else if (request.action === "toggleReaderMode") {
+    if (readerActive) {
+      deactivateReader();
+    } else {
+      activateReader();
+    }
   } else if (request.action === "updateReaderState") {
     // Optional: auto-activate if domain is enabled
     if (request.enabled && !readerActive) {
