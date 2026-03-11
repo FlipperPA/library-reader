@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Library",
+  "name": "Library Reader",
   "version": "1.0",
-  "description": "Library is a reader mode for Chromium browsers, with domain persistence options.",
+  "description": "Click the extension icon to toggle a simple, clean reader mode. Right-click to toggle 'always on' mode for the current domain.",
   "permissions": ["activeTab", "storage", "scripting", "contextMenus"],
   "host_permissions": ["<all_urls>"],
   "background": {
