@@ -2,10 +2,20 @@
 
 This browser extension adds a simple reader mode, using [Mozilla's readability library](https://github.com/mozilla/readability).
 
+## Before
+
+<img width="1181" height="808" alt="Before reader mode activated" src="https://github.com/user-attachments/assets/556a8134-4c99-45ea-8c12-0371a7e2dcfb" />
+
+## After
+
 Left clicking the icon toggles Reader Mode.
+
 <img width="1181" height="808" alt="How to toggle reader mode" src="https://github.com/user-attachments/assets/af823116-e9ed-4168-ab6c-d14a291b9b7f" />
 
+## Always Run for the Current Domain
+
 Right clicking the icon gives the option to always run on the current domain.
+
 <img width="545" height="398" alt="How to always run on the current domain" src="https://github.com/user-attachments/assets/b1cdf401-2d06-42b2-8283-f877a752a615" />
 
 ## To Build
