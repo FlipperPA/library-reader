@@ -2,6 +2,27 @@ import { Readability } from '@mozilla/readability';
 
 let readerActive = false;
 let originalContent = null;
+let currentFont = 'sans';
+
+function injectOpenDyslexicFont() {
+  if (document.getElementById('library-reader-font-face')) return;
+  const style = document.createElement('style');
+  style.id = 'library-reader-font-face';
+  style.textContent = [
+    `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL('fonts/OpenDyslexic-Regular.otf')}') format('opentype'); font-weight: normal; font-style: normal; }`,
+    `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL('fonts/OpenDyslexic-Bold.otf')}') format('opentype'); font-weight: bold; font-style: normal; }`,
+    `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL('fonts/OpenDyslexic-Italic.otf')}') format('opentype'); font-weight: normal; font-style: italic; }`,
+    `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL('fonts/OpenDyslexic-BoldItalic.otf')}') format('opentype'); font-weight: bold; font-style: italic; }`,
+  ].join('\n');
+  (document.head || document.documentElement).appendChild(style);
+}
+
+function applyFont(font) {
+  const container = document.getElementById('library-reader-container');
+  if (!container) return;
+  container.classList.remove('font-sans', 'font-serif', 'font-dyslexic');
+  container.classList.add(`font-${font}`);
+}
 
 function extractReadableContent() {
   const clone = document.cloneNode(true);
@@ -18,12 +39,14 @@ function activateReader() {
     alert("No readable content found.");
     return;
   }
+  injectOpenDyslexicFont();
   document.body.innerHTML = `
     <div id="library-reader-container">
       <button id="exit-reader">Exit Reader Mode</button>
       <article>${readable}</article>
     </div>
   `;
+  applyFont(currentFont);
   readerActive = true;
   document.getElementById("exit-reader").addEventListener("click", deactivateReader);
 }
@@ -52,13 +75,17 @@ chrome.runtime.onMessage.addListener((request) => {
     if (request.enabled && !readerActive) {
       activateReader();
     }
+  } else if (request.action === "setFont") {
+    currentFont = request.font;
+    applyFont(request.font);
   }
 });
 
-// Auto-check domain persistence on load
-chrome.storage.sync.get(["enabledDomains"], ({ enabledDomains }) => {
+// Load preferences and auto-activate for enabled domains
+chrome.storage.sync.get(["enabledDomains", "readerFont"], ({ enabledDomains, readerFont }) => {
+  currentFont = readerFont || 'sans';
   const domain = window.location.hostname;
-  if (enabledDomains.includes(domain)) {
+  if ((enabledDomains || []).includes(domain)) {
     setTimeout(activateReader, 500); // slight delay to ensure page loads
   }
 });

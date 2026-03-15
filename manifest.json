@@ -21,5 +21,11 @@
         "css": ["styles.css"],
         "run_at": "document_idle"
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/*"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }

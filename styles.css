@@ -2,7 +2,6 @@
   max-width: 700px;
   margin: 40px auto;
   padding: 20px;
-  font-family: Georgia, serif;
   line-height: 1.6;
   background: #fff;
   color: #222;
@@ -10,6 +9,18 @@
 
 #library-reader-container article {
   font-size: 18px;
+}
+
+#library-reader-container.font-sans {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#library-reader-container.font-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+#library-reader-container.font-dyslexic {
+  font-family: 'OpenDyslexic', sans-serif;
 }
 
 #exit-reader {
