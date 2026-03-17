@@ -2113,6 +2113,7 @@
         const clone = document.cloneNode(true);
         const reader = new import_readability.Readability(clone);
         const article = reader.parse();
+        console.log("Extracted article:", article);
         return article ? article.content : null;
       }
       function activateReader() {

@@ -7,6 +7,11 @@
   color: #222;
 }
 
+#library-reader-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 #library-reader-container article {
   font-size: 18px;
 }
