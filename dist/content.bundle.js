@@ -2114,7 +2114,13 @@
         const reader = new import_readability.Readability(clone);
         const article = reader.parse();
         console.log("Extracted article:", article);
-        return article ? article.content : null;
+        if (article) {
+          const title = article.title ? article.title : null;
+          const byline = article.byline ? article.byline : null;
+          const content = article.content ? article.content : null;
+          return { title, byline, content };
+        }
+        return null;
       }
       function activateReader() {
         if (readerActive) return;
@@ -2125,12 +2131,15 @@
           return;
         }
         injectOpenDyslexicFont();
-        document.body.innerHTML = `
-    <div id="library-reader-container">
-      <button id="exit-reader">Exit Reader Mode</button>
-      <article>${readable}</article>
-    </div>
-  `;
+        var readableHTML = `<div id="library-reader-container"><button id="exit-reader">Exit Reader Mode</button>`;
+        if (readable.title) {
+          readableHTML += `<h1>${readable.title}</h1>`;
+        }
+        if (readable.byline) {
+          readableHTML += `<i>by ${readable.byline}</i>`;
+        }
+        readableHTML = readableHTML + `<article>${readable.content}</article></div>`;
+        document.body.innerHTML = readableHTML;
         applyFont(currentFont);
         readerActive = true;
         document.getElementById("exit-reader").addEventListener("click", deactivateReader);
