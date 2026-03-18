@@ -11,7 +11,8 @@
   "commands": {
     "toggle-reader-mode": {
       "suggested_key": {
-        "default": "F9"
+        "default": "Ctrl+Space",
+        "mac": "MacCtrl+Space"
       },
       "description": "Toggle reader mode"
     }
