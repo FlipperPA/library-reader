@@ -8,6 +8,14 @@
   "background": {
     "service_worker": "background.js"
   },
+  "commands": {
+    "toggle-reader-mode": {
+      "suggested_key": {
+        "default": "F9"
+      },
+      "description": "Toggle reader mode"
+    }
+  },
   "action": {
     "default_icon": {
       "16": "assets/icons/icon16.png",

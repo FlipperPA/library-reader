@@ -52,6 +52,17 @@ chrome.action.onClicked.addListener((tab) => {
   chrome.tabs.sendMessage(tab.id, { action: "toggleReaderMode" });
 });
 
+// F9 keyboard shortcut → toggle reader mode on the active tab
+chrome.commands.onCommand.addListener((command) => {
+  if (command === "toggle-reader-mode") {
+    chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
+      if (tab?.id) {
+        chrome.tabs.sendMessage(tab.id, { action: "toggleReaderMode" });
+      }
+    });
+  }
+});
+
 const FONT_MENU_IDS = { fontSans: "sans", fontSerif: "serif", fontDyslexic: "dyslexic" };
 
 // Right-click context menu handler
