@@ -12,7 +12,7 @@ This browser extension adds a simple reader mode, using [Mozilla's readability l
 
 ## After
 
-Left clicking the icon toggles Reader Mode.
+Left click the icon to toggle Reader Mode. `CTRL+SPACE` will also toggle.
 
 <img width="1181" height="808" alt="How to toggle reader mode" src="https://github.com/user-attachments/assets/af823116-e9ed-4168-ab6c-d14a291b9b7f" />
 
