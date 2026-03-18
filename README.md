@@ -1,10 +1,11 @@
 # library-reader Chromium Extension
 
 This browser extension adds a simple reader mode, using [Mozilla's readability library](https://github.com/mozilla/readability). Want to try the beta?
-    * [Download the latest beta release](https://github.com/FlipperPA/library-reader/releases/) and unzip it
-    * Open your extensions `chrome://extensions` or `helium://extensions`
-    * Toggle `Developer mode` to be on, if it is off
-    * Select `Load Unpacked` and point to the unzipped folder
+
+* [Download the latest beta release](https://github.com/FlipperPA/library-reader/releases/) and unzip it
+* Open your extensions `chrome://extensions` or `helium://extensions`
+* Toggle `Developer mode` to be on, if it is off
+* Select `Load Unpacked` and point to the unzipped folder
 
 ## Before
 
