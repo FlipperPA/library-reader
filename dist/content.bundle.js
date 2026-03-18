@@ -2096,10 +2096,10 @@
         const style = document.createElement("style");
         style.id = "library-reader-font-face";
         style.textContent = [
-          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("fonts/OpenDyslexic-Regular.otf")}') format('opentype'); font-weight: normal; font-style: normal; }`,
-          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("fonts/OpenDyslexic-Bold.otf")}') format('opentype'); font-weight: bold; font-style: normal; }`,
-          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("fonts/OpenDyslexic-Italic.otf")}') format('opentype'); font-weight: normal; font-style: italic; }`,
-          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("fonts/OpenDyslexic-BoldItalic.otf")}') format('opentype'); font-weight: bold; font-style: italic; }`
+          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("assets/fonts/OpenDyslexic-Regular.otf")}') format('opentype'); font-weight: normal; font-style: normal; }`,
+          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("assets/fonts/OpenDyslexic-Bold.otf")}') format('opentype'); font-weight: bold; font-style: normal; }`,
+          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("assets/fonts/OpenDyslexic-Italic.otf")}') format('opentype'); font-weight: normal; font-style: italic; }`,
+          `@font-face { font-family: 'OpenDyslexic'; src: url('${chrome.runtime.getURL("assets/fonts/OpenDyslexic-BoldItalic.otf")}') format('opentype'); font-weight: bold; font-style: italic; }`
         ].join("\n");
         (document.head || document.documentElement).appendChild(style);
       }
