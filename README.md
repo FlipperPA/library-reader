@@ -7,22 +7,26 @@ This browser extension adds a simple reader mode, using [Mozilla's readability l
 * Toggle `Developer mode` to be on, if it is off
 * Select `Load Unpacked` and point to the unzipped folder
 
-## Before
-
-<img width="1181" height="808" alt="Before reader mode activated" src="https://github.com/user-attachments/assets/556a8134-4c99-45ea-8c12-0371a7e2dcfb" />
-
-## After
+## Example of a CNN Article
 
 Left click the icon to toggle Reader Mode. `Ctrl+Space` will also toggle.
 
-<img width="1181" height="808" alt="How to toggle reader mode" src="https://github.com/user-attachments/assets/af823116-e9ed-4168-ab6c-d14a291b9b7f" />
+**Before**
+
+<img width="1280" height="800" alt="Before reader mode activated" src="assets/images/reader-2.png" />
+
+**After**
+
+<img width="1280" height="800" alt="After reader mode activated" src="assets/images/reader-4.png" />
 
 ## Right Click for Options
 
-* Always Run for the Current Domain: toggles automatic activation of reader mode during any visit to the current domain.
-* Font: choose `Sans Serif` (default), `Serif`, or `OpenDyslexic` for a font [designed for dyslexic readers](https://opendyslexic.org/). 
+* `Always Run for the Current Domain`: toggles automatic activation of reader mode during any visit to the current domain.
+* `Font`: choose `Sans Serif` (default), `Serif`, or `OpenDyslexic` for a font [designed for dyslexic readers](https://opendyslexic.org/). 
 
-## To Build
+<img width="1280" height="800" alt="After reader mode activated" src="assets/images/reader-1.png" />
+
+## Developers: Build and Package for Upload
 
 ```bash
 cd library-reader
