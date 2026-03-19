@@ -27,5 +27,5 @@ Left click the icon to toggle Reader Mode. `Ctrl+Space` will also toggle.
 ```bash
 cd library-reader
 node build.js
-zip -r library-reader.zip manifest.json styles.css dist icons
+zip -r library-reader.zip manifest.json assets/style.css assets/dist assets/icons
 ```

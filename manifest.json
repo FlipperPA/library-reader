@@ -26,14 +26,14 @@
   "content_scripts": [
     {
         "matches": ["<all_urls>"],
-        "js": ["dist/content.bundle.js"],
-        "css": ["styles.css"],
+        "js": ["assets/dist/content.bundle.js"],
+        "css": ["assets/style.css"],
         "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["fonts/*"],
+      "resources": ["assets/fonts/*"],
       "matches": ["<all_urls>"]
     }
   ]
