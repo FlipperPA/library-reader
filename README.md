@@ -9,15 +9,11 @@ This browser extension adds a simple reader mode, using [Mozilla's readability l
 
 ## Example of a CNN Article
 
-Left click the icon to toggle Reader Mode. `Ctrl+Space` will also toggle.
+Left click the extension icon to toggle Reader Mode. `Ctrl+Space` will also toggle.
 
-**Before**
-
-<img width="1280" height="800" alt="Before reader mode activated" src="assets/images/reader-2.png" />
-
-**After**
-
-<img width="1280" height="800" alt="After reader mode activated" src="assets/images/reader-4.png" />
+| Before | After |
+| ------------- | ------------- |
+| <img width="640" height="400" alt="Before reader mode activated" src="assets/images/reader-2.png" /> | <img width="640" height="400" alt="After reader mode activated" src="assets/images/reader-4.png" /> |
 
 ## Right Click for Options
 
