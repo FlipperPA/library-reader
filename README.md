@@ -15,7 +15,7 @@ Left click the extension icon to toggle Reader Mode. `Ctrl+Space` will also togg
 | ------------- | ------------- |
 | <img width="640" height="400" alt="Before reader mode activated" src="assets/images/reader-2.png" /> | <img width="640" height="400" alt="After reader mode activated" src="assets/images/reader-4.png" /> |
 
-## Right Click for Options
+## Right Click the Extension Icon for Options
 
 * `Always on for this domain`: toggles automatic activation of reader mode during any visit to the current domain.
 * `Font`: choose `Sans Serif` (default), `Serif`, or `OpenDyslexic` for a font [designed for dyslexic readers](https://opendyslexic.org/). 
