@@ -29,3 +29,7 @@ cd library-reader
 node build.js
 zip -r library-reader.zip manifest.json assets/style.css assets/dist assets/icons
 ```
+
+## Privacy Policy
+
+This extension does not collect any user data.
