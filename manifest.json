@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Library Reader",
   "version": "1.0.0",
-  "description": "Click the extension icon to toggle a simple, clean reader mode. Right-click to toggle 'always on' mode for the current domain.",
+  "description": "Click the extension icon to toggle a simple, clean reader mode. Right-click for options: always activate for the current domain, or change the font.",
   "permissions": ["activeTab", "storage", "scripting", "contextMenus"],
   "host_permissions": ["<all_urls>"],
   "background": {
