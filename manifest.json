@@ -3,8 +3,7 @@
   "name": "Library Reader",
   "version": "1.0.0",
   "description": "Click the extension icon to toggle a clean reader mode. Right-click for options: Always on for this domain, or change the font.",
-  "permissions": ["activeTab", "storage", "scripting", "contextMenus"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["activeTab", "storage", "tabs", "contextMenus"],
   "background": {
     "service_worker": "background.js"
   },
