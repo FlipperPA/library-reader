@@ -7,6 +7,19 @@
   color: #222;
 }
 
+#library-reader-container p {
+  margin-bottom: 1rem;
+}
+
+#library-reader-container a {
+  color: #00c;
+  text-decoration: none;
+}
+
+#library-reader-container a:hover {
+  text-decoration: underline;
+}
+
 #library-reader-container img {
   max-width: 100%;
   height: auto;
