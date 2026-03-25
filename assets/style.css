@@ -17,6 +17,21 @@
   text-decoration: underline;
 }
 
+#library-reader-container h1,
+#library-reader-container h2,
+#library-reader-container h3,
+#library-reader-container h4,
+#library-reader-container h5,
+#library-reader-container h6,
+#library-reader-container i,
+#library-reader-container em,
+#library-reader-container b,
+#library-reader-container strong,
+#library-reader-container blockquote,
+#library-reader-container span {
+  color: inherit;
+}
+
 #library-reader-container img {
   max-width: 100%;
   height: auto;
