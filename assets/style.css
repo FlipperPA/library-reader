@@ -3,8 +3,6 @@
   margin: 40px auto;
   padding: 20px;
   line-height: 1.6;
-  background: #fff;
-  color: #222;
 }
 
 #library-reader-container p {
@@ -12,7 +10,6 @@
 }
 
 #library-reader-container a {
-  color: #00c;
   text-decoration: none;
 }
 
@@ -46,7 +43,36 @@
   top: 20px;
   right: 20px;
   padding: 8px 12px;
-  background: #f0f0f0;
-  border: 1px solid #000;
   cursor: pointer;
 }
+
+/* Light theme */
+#library-reader-container.theme-light { background: #fff; color: #222; }
+#library-reader-container.theme-light a { color: #00c; }
+#library-reader-container.theme-light #exit-reader {
+  background: #f0f0f0;
+  color: #222;
+  border: 1px solid #000;
+}
+
+/* Dark theme */
+#library-reader-container.theme-dark { background: #121212; color: #e8e8e8; }
+#library-reader-container.theme-dark a { color: #88aaff; }
+#library-reader-container.theme-dark #exit-reader {
+  background: #2a2a2a;
+  color: #e8e8e8;
+  border: 1px solid #666;
+}
+
+/* Color-blind safe theme */
+#library-reader-container.theme-cb { background: #fffef2; color: #000; }
+#library-reader-container.theme-cb a { color: #0072b2; }
+#library-reader-container.theme-cb #exit-reader {
+  background: #e8f4fa;
+  color: #000;
+  border: 1px solid #0072b2;
+}
+
+/* Page background matches theme */
+body:has(#library-reader-container.theme-dark) { background-color: #121212; }
+body:has(#library-reader-container.theme-cb) { background-color: #fffef2; }

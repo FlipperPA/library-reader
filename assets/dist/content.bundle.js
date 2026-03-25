@@ -2091,6 +2091,7 @@
       var readerActive = false;
       var originalContent = null;
       var currentFont = "sans";
+      var currentTheme = "light";
       function injectOpenDyslexicFont() {
         if (document.getElementById("library-reader-font-face")) return;
         const style = document.createElement("style");
@@ -2108,6 +2109,12 @@
         if (!container) return;
         container.classList.remove("font-sans", "font-serif", "font-dyslexic");
         container.classList.add(`font-${font}`);
+      }
+      function applyTheme(theme) {
+        const container = document.getElementById("library-reader-container");
+        if (!container) return;
+        container.classList.remove("theme-light", "theme-dark", "theme-cb");
+        container.classList.add(`theme-${theme}`);
       }
       function extractReadableContent() {
         const clone = document.cloneNode(true);
@@ -2141,6 +2148,7 @@
         readableHTML = readableHTML + `<article>${readable.content}</article></div>`;
         document.body.innerHTML = readableHTML;
         applyFont(currentFont);
+        applyTheme(currentTheme);
         readerActive = true;
         document.getElementById("exit-reader").addEventListener("click", deactivateReader);
       }
@@ -2168,10 +2176,14 @@
         } else if (request.action === "setFont") {
           currentFont = request.font;
           applyFont(request.font);
+        } else if (request.action === "setTheme") {
+          currentTheme = request.theme;
+          applyTheme(request.theme);
         }
       });
-      chrome.storage.sync.get(["enabledDomains", "readerFont"], ({ enabledDomains, readerFont }) => {
+      chrome.storage.sync.get(["enabledDomains", "readerFont", "readerTheme"], ({ enabledDomains, readerFont, readerTheme }) => {
         currentFont = readerFont || "sans";
+        currentTheme = readerTheme || "light";
         const domain = window.location.hostname;
         if ((enabledDomains || []).includes(domain)) {
           setTimeout(activateReader, 500);

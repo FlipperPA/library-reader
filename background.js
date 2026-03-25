@@ -1,8 +1,9 @@
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.get(["enabledDomains", "readerFont"], (data) => {
+  chrome.storage.sync.get(["enabledDomains", "readerFont", "readerTheme"], (data) => {
     const enabledDomains = data.enabledDomains || [];
     const readerFont = data.readerFont || "sans";
-    chrome.storage.sync.set({ enabledDomains, readerFont });
+    const readerTheme = data.readerTheme || "light";
+    chrome.storage.sync.set({ enabledDomains, readerFont, readerTheme });
 
     chrome.contextMenus.create({
       id: "toggleDomain",
@@ -44,6 +45,39 @@ chrome.runtime.onInstalled.addListener(() => {
       checked: readerFont === "dyslexic",
       contexts: ["action"],
     });
+
+    chrome.contextMenus.create({
+      id: "themeMenu",
+      title: "Theme",
+      contexts: ["action"],
+    });
+
+    chrome.contextMenus.create({
+      id: "themeLight",
+      parentId: "themeMenu",
+      title: "Light",
+      type: "radio",
+      checked: readerTheme === "light",
+      contexts: ["action"],
+    });
+
+    chrome.contextMenus.create({
+      id: "themeDark",
+      parentId: "themeMenu",
+      title: "Dark",
+      type: "radio",
+      checked: readerTheme === "dark",
+      contexts: ["action"],
+    });
+
+    chrome.contextMenus.create({
+      id: "themeCb",
+      parentId: "themeMenu",
+      title: "Color Blind Safe",
+      type: "radio",
+      checked: readerTheme === "cb",
+      contexts: ["action"],
+    });
   });
 });
 
@@ -64,6 +98,7 @@ chrome.commands.onCommand.addListener((command) => {
 });
 
 const FONT_MENU_IDS = { fontSans: "sans", fontSerif: "serif", fontDyslexic: "dyslexic" };
+const THEME_MENU_IDS = { themeLight: "light", themeDark: "dark", themeCb: "cb" };
 
 // Right-click context menu handler
 chrome.contextMenus.onClicked.addListener((info, tab) => {
@@ -89,6 +124,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     chrome.storage.sync.set({ readerFont: font }, () => {
       if (tab?.id) {
         chrome.tabs.sendMessage(tab.id, { action: "setFont", font });
+      }
+    });
+  } else if (info.menuItemId in THEME_MENU_IDS) {
+    const theme = THEME_MENU_IDS[info.menuItemId];
+    chrome.storage.sync.set({ readerTheme: theme }, () => {
+      if (tab?.id) {
+        chrome.tabs.sendMessage(tab.id, { action: "setTheme", theme });
       }
     });
   }
