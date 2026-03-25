@@ -19,6 +19,7 @@ Left click the extension icon to toggle Reader Mode. `Ctrl+Space` will also togg
 
 * `Always on for this domain`: toggles automatic activation of reader mode during any visit to the current domain.
 * `Font`: choose `Sans Serif` (default), `Serif`, or `OpenDyslexic` for a font [designed for dyslexic readers](https://opendyslexic.org/). 
+* `Theme`: choose `Light` (default), `Dark`, or `Color Blind Safe`
 
 <img width="1280" height="800" alt="After reader mode activated" src="assets/images/reader-1.png" />
 
