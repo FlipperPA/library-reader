@@ -32,6 +32,12 @@
   color: inherit;
 }
 
+#library-reader-container h1 {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 #library-reader-container img {
   max-width: 100%;
   height: auto;
