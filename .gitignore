@@ -24,3 +24,7 @@ Desktop.ini
 # Node modules
 node_modules/
 *node_modules/
+
+# Build assets
+library-reader.zip
+library-reader/*
