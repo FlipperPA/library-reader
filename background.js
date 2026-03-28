@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.get(["enabledDomains", "readerFont", "readerTheme"], (data) => {
     const enabledDomains = data.enabledDomains || [];
     const readerFont = data.readerFont || "sans";
-    const readerTheme = data.readerTheme || "light";
+    const readerTheme = data.readerTheme || "dark";
     chrome.storage.sync.set({ enabledDomains, readerFont, readerTheme });
 
     chrome.contextMenus.create({
@@ -53,15 +53,6 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 
     chrome.contextMenus.create({
-      id: "themeLight",
-      parentId: "themeMenu",
-      title: "Light",
-      type: "radio",
-      checked: readerTheme === "light",
-      contexts: ["action"],
-    });
-
-    chrome.contextMenus.create({
       id: "themeDark",
       parentId: "themeMenu",
       title: "Dark",
@@ -71,9 +62,18 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 
     chrome.contextMenus.create({
+      id: "themeLight",
+      parentId: "themeMenu",
+      title: "Light",
+      type: "radio",
+      checked: readerTheme === "light",
+      contexts: ["action"],
+    });
+
+    chrome.contextMenus.create({
       id: "themeCb",
       parentId: "themeMenu",
-      title: "Color Blind Safe",
+      title: "Color Blind Friendly",
       type: "radio",
       checked: readerTheme === "cb",
       contexts: ["action"],
