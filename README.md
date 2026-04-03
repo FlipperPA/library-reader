@@ -1,5 +1,11 @@
 # library-reader Chromium Extension
 
+<a href="https://your-link.com">
+  <img src="https://img.shields.io/badge/INSTALL%20THE%20LIBRARY%20READER%20EXTENSION-8A2BE2" alt="Install the Library Reader Extension">
+</a>
+
+<img src="https://img.shields.io/chrome-web-store/size/mjpdekbomfibfifomicibenpofdkkacc" alt="Dynamic extension size">
+
 This browser extension adds a simple reader mode, using [Mozilla's readability library](https://github.com/mozilla/readability). Want to try the beta?
 
 * [Download the latest beta release](https://github.com/FlipperPA/library-reader/releases/) and unzip it
