@@ -2,12 +2,7 @@
 
 <a href="https://chromewebstore.google.com/detail/Library%20Reader/mjpdekbomfibfifomicibenpofdkkacc"><img src="https://img.shields.io/badge/INSTALL%20THE%20LIBRARY%20READER%20EXTENSION-8A2BE2" alt="Install the Library Reader Extension"></a> <img src="https://img.shields.io/chrome-web-store/size/mjpdekbomfibfifomicibenpofdkkacc" alt="Dynamic extension size">
 
-This browser extension adds a simple reader mode, using [Mozilla's readability library](https://github.com/mozilla/readability). Want to try the beta?
-
-* [Download the latest beta release](https://github.com/FlipperPA/library-reader/releases/) and unzip it
-* Open your extensions `chrome://extensions` or `helium://extensions`
-* Toggle `Developer mode` to be on, if it is off
-* Select `Load Unpacked` and point to the unzipped folder
+This is the source for a browser extension that adds a simple reader mode, using [Mozilla's readability library](https://github.com/mozilla/readability).
 
 ## Example of a CNN Article
 
@@ -21,7 +16,7 @@ Left click the extension icon to toggle Reader Mode. `Ctrl+Space` will also togg
 
 * `Always on for this domain`: toggles automatic activation of reader mode during any visit to the current domain.
 * `Font`: choose `Sans Serif` (default), `Serif`, or `OpenDyslexic` for a font [designed for dyslexic readers](https://opendyslexic.org/). 
-* `Theme`: choose `Light` (default), `Dark`, or `Color Blind Safe`
+* `Theme`: choose `Dark` (default), `Light`, or `Color Blind Safe`
 
 <img width="1280" height="800" alt="After reader mode activated" src="assets/images/reader-1.png" />
 
@@ -29,10 +24,9 @@ Left click the extension icon to toggle Reader Mode. `Ctrl+Space` will also togg
 
 ```bash
 cd library-reader
-node build.js
-zip -r library-reader.zip manifest.json assets/style.css assets/dist assets/icons
+npm run package
 ```
 
 ## Privacy Policy
 
-This extension does not collect any user data.
+This extension needs read permission to every page, so it can create the reader view. **It does not collect any user data.**
