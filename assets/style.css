@@ -49,8 +49,11 @@
 
 #library-reader-container figure {
     border: 1px solid;
-    padding: 0.25rem;
     margin: 1rem 0 1rem 0;
+}
+
+#library-reader-container figcaption {
+    padding: 0.5rem;
 }
 
 #library-reader-container.font-sans {
