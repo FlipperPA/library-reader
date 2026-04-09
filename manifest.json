@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Library Reader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Click the extension icon to toggle a clean reader mode. Right-click for options: Always on for this domain, or change the font.",
   "permissions": ["activeTab", "contextMenus", "storage"],
   "background": {
